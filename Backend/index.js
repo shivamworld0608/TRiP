@@ -11,7 +11,7 @@ const app = express();
 
 
 app.use(cors({
-    origin: 'https://tripclient.vercel.app',
+    origin: '*',
 }));
 app.use(express.json());
 
