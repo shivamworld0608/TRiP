@@ -13,12 +13,13 @@ const corsOptions = {
     origin: 'http://localhost:5173',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
+    preflightContinue: false,
     optionsSuccessStatus: 204
 };
 
-app.use(cors(corsOptions));
 
 app.use(cors(corsOptions));
+app.options('*', cors(corsOptions));
 app.use(express.json());
 
 dotenv.config();
