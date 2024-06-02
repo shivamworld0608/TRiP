@@ -8,7 +8,7 @@ const Mytrips = ({loggedInUser}) => {
   const [trips, setTrips] = useState([]);
   useEffect(() => {
     const interval = setInterval(() => {
-      axios.get("http://localhost:4001/trip/mytrips", {
+      axios.get(`${import.meta.env.REACT_APP_BASE_URL}/trip/mytrips`, {
         params: { username:loggedInUser.username },
       }).then((response) => {
         setTrips(response.data.trips);
@@ -32,7 +32,7 @@ const Mytrips = ({loggedInUser}) => {
       tripcode:trip.tripcode,
     }
     console.log(`Trip name: ${trip.tripname}, Trip code: ${trip.tripcode}`);
-      await axios.post("http://localhost:4001/trip/finaltrip",tripInfo)
+      await axios.post(`${import.meta.env.REACT_APP_BASE_URL}/trip/finaltrip`,tripInfo)
       .then((res) => {
         console.log(res.data);
         if (res.data) {
@@ -55,7 +55,7 @@ const Mytrips = ({loggedInUser}) => {
       tripcode:trip.tripcode,
       username:loggedInUser.username
     }
-      await axios.post("http://localhost:4001/trip/deletetrip",tripInfo)
+      await axios.post(`${import.meta.env.REACT_APP_BASE_URL}/trip/deletetrip`,tripInfo)
       .then((res) => {
         console.log(res.data);
       })

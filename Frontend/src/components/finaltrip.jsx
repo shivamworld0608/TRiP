@@ -38,7 +38,7 @@ const [split,setSplit]=useState([]);
 console.log(split);
 useEffect(() => {
   const interval = setInterval(() => {
-    axios.get("http://localhost:4001/trip/finaltrip", {
+    axios.get(`${import.meta.env.REACT_APP_BASE_URL}/trip/finaltrip`, {
       params: { tripcode: trip.tripcode },
     }).then((response) => {
       setTrip(response.data.trip);
@@ -97,7 +97,7 @@ let negative_expenditure= getnegativeExpenditureByUsername(username);
   reset();
     console.log("Form reset called");
     await axios
-      .post("http://localhost:4001/transaction/transaction", tripInfo)
+      .post(`${import.meta.env.REACT_APP_BASE_URL}/transaction/transaction`, tripInfo)
       .then((res) => {
         if (res.data) {
           toast.success("Amount added Successfully");
@@ -117,7 +117,7 @@ let negative_expenditure= getnegativeExpenditureByUsername(username);
 
   const whopays = async (data) => {
     
-    axios.get("http://localhost:4001/transaction/whopays", {
+    axios.get(`${import.meta.env.REACT_APP_BASE_URL}/transaction/whopays`, {
       params: { tripcode: trip.tripcode },
     })
       .then((res) => {
@@ -145,7 +145,7 @@ let negative_expenditure= getnegativeExpenditureByUsername(username);
   
   };
   const finalise= async () => {
-    axios.get("http://localhost:4001/transaction/finalise", {
+    axios.get(`${import.meta.env.REACT_APP_BASE_URL}/transaction/finalise`, {
       params: { tripcode: trip.tripcode },
     })
       .then((res) => {

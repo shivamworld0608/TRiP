@@ -50,7 +50,7 @@ function Signup() {
       otp: formData.otp,
     };
     await axios
-      .post("http://localhost:4001/user/verify", userInfo)
+      .post(`${import.meta.env.REACT_APP_BASE_URL}/user/verify`, userInfo)
       .then((res) => {
         console.log(res.data);
         if (res.data) {
@@ -83,7 +83,7 @@ function Signup() {
       password: formData.password,
     };
     await axios
-      .post("http://localhost:4001/user/signup", userInfo)
+      .post(`${import.meta.env.REACT_APP_BASE_URL}/user/signup`, userInfo)
       .then((res) => {
         console.log(res.data);
         if (res.data) {

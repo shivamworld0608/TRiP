@@ -25,7 +25,7 @@ function Jointrip() {
       username: username,
     };
     await axios
-      .post("http://localhost:4001/trip/jointrip", tripInfo)
+      .post(`${import.meta.env.REACT_APP_BASE_URL}/trip/jointrip`, tripInfo)
       .then((res) => {
         if (res.data) {
           toast.success("Trip Joined Successfully");

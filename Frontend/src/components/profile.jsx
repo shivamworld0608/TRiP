@@ -10,7 +10,7 @@ function Profiles({loggedInUser}){
 
   useEffect(() => {
     const interval = setInterval(() => {
-      axios.get("http://localhost:4001/user/profile", {
+      axios.get(`${import.meta.env.REACT_APP_BASE_URL}/user/profile`, {
         params: { username:loggedInUser.username },
       }).then((response) => {
         setProfile(response.data.user);

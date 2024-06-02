@@ -43,7 +43,7 @@ const tripdata={trip};
   useEffect(() => {
     const interval = setInterval(() => {
       axios
-        .get("http://localhost:4001/transaction/finalise", {
+        .get(`${import.meta.env.REACT_APP_BASE_URL}/transaction/finalise`, {
           params: { tripcode: tripcode },
         })
         .then((response) => {

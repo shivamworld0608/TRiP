@@ -6,6 +6,9 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
+
+
+
   function Createtrip() {
     const location = useLocation();
     const navigate = useNavigate();
@@ -23,13 +26,14 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
         const { username } = authUser;
         
         console.log(username);
+        console.log(import.meta.env.REACT_APP_BASE_URL);
       const tripInfo = {
         tripname: data.tripname,
         tripcode: data.tripcode,
         username: username,
       };
       await axios
-        .post("http://localhost:4001/trip/createtrip", tripInfo)
+        .post(`${import.meta.env.REACT_APP_BASE_URL}/trip/createtrip`, tripInfo)
         .then((res) => {
           console.log(res.data);
           if (res.data) {
@@ -49,7 +53,7 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
     const [tripCode, setTripCode] = useState('');
 
     function autogenerate(){
-      axios.get("http://localhost:4001/trip/autocode")
+      axios.get(`${import.meta.env.REACT_APP_BASE_URL}/trip/autocode`)
         .then((res) => {
           if (res.data) {
             setTripCode(res.data.code);
