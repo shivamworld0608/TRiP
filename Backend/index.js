@@ -7,6 +7,11 @@ import createtripRoute from "./route/trip.route.js";
 import transactionroute from "./route/transaction.route.js";
 
 const app = express();
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    next();
+  });
+  
 
 app.use(cors());
 app.use(express.json());
