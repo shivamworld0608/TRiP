@@ -1,7 +1,6 @@
 {
     "name": "frontend",
     "private": true,
-    "proxy":"https://trip-hi7w.onrender.com",
     "version": "0.0.0",
     "type": "module",
     "scripts": {
