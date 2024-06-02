@@ -16,6 +16,7 @@ dotenv.config();
 const PORT = process.env.PORT || 4000;
 const URI = process.env.MongoDBURI;
 
+
 // connect to mongoDB
 try {
     mongoose.connect(URI, {
@@ -28,7 +29,9 @@ try {
 }
 
 // defining routes
-
+app.get("/", (req, res) => {
+    res.send("Hello, this is the root!");
+});
 app.use("/user", userRoute);
 app.use("/trip", createtripRoute);
 app.use("/transaction", transactionroute);
