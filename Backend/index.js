@@ -10,19 +10,23 @@ const app = express();
 
 
 
-app.use(cors());
+app.use(cors({
+    origin: '*',
+}));
 app.use(express.json());
 
 dotenv.config();
 // Example of specifying CORS options (optional)
-const corsOptions = {
+/* const corsOptions = {
     origin: '*',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     allowedHeaders: ['Content-Type', 'Authorization']
   };
   
   // Use the cors middleware with options
-  app.use(cors(corsOptions));
+  app.use(cors(corsOptions)); */
+
+
 
 
 const PORT = process.env.PORT || 4000;
