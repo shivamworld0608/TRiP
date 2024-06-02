@@ -7,16 +7,23 @@ import createtripRoute from "./route/trip.route.js";
 import transactionroute from "./route/transaction.route.js";
 
 const app = express();
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    next();
-  });
-  
+
+
 
 app.use(cors());
 app.use(express.json());
 
 dotenv.config();
+// Example of specifying CORS options (optional)
+const corsOptions = {
+    origin: '*',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+    allowedHeaders: ['Content-Type', 'Authorization']
+  };
+  
+  // Use the cors middleware with options
+  app.use(cors(corsOptions));
+
 
 const PORT = process.env.PORT || 4000;
 const URI = process.env.MongoDBURI;
