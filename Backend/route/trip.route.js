@@ -8,7 +8,7 @@ router.post("/createtrip", createtrip);
 router.post("/jointrip", jointrip);
 router.get("/check",
            res.send("hello this is working");
-
+);
 router.get("/finaltrip", finaltripp);
 router.post("/finaltrip", finaltrip);
 router.post("/deletetrip", deletetrip);
