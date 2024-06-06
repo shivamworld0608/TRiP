@@ -14,7 +14,7 @@ const corsOptions = {
 };
 
 
-app.options('', cors(corsOptions));
+app.options('*', cors(corsOptions));
 app.use(cors(corsOptions));
 app.use(express.json());
 
@@ -39,9 +39,9 @@ try {
 app.get("/", (req, res) => {
     res.send("Hello, this is the root!");
 });
-app.use("/user",userRoute);
-app.use("/trip",createtripRoute);
-app.use("/transaction",transactionroute);
+app.use("/user", cors(corsOptions), userRoute);
+app.use("/trip", cors(corsOptions), createtripRoute);
+app.use("/transaction", cors(corsOptions), transactionroute);
 
 app.listen(PORT, () => {
     console.log(`Server is listening on port ${PORT}`);
