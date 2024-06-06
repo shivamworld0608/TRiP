@@ -12,7 +12,9 @@ router.post("/jointrip", jointrip);
 router.get("/finaltrip", finaltripp);
 router.post("/finaltrip", finaltrip);
 router.post("/deletetrip", deletetrip);
-
+router.get("/check", (req, res) => {
+    res.send("Hello, this is the root!");
+});
 
 // Route to fetch trips by username
 router.get('/mytrips', async (req, res) => {
