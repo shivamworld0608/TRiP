@@ -11,12 +11,12 @@ function Signup() {
   const navigate = useNavigate();
   const from = location.state?.from?.pathname || "/";
   const {
-    register,
     formState: { errors },
   } = useForm();
 
   const [style, setStyle] = useState("hidden");
   const [verotp, setVerotp] = useState("Verify Email");
+  const [imp,setImp]=useState(-1);
 
   const [formData, setFormData] = useState({
     fullname: "",
@@ -37,8 +37,10 @@ function Signup() {
   const handleButtonClick = () => {
     if (verotp === "Verify Email") {
       onSubmit();
+      if(imp==1){
       setStyle("block");
       setVerotp("Signup");
+    }
     } else {
       verify();
     }
@@ -82,14 +84,21 @@ function Signup() {
       username: formData.username,
       password: formData.password,
     };
+    console.log("call karne se phle");
     await axios
       .post(`${import.meta.env.REACT_APP_BASE_URL}/user/signup`, userInfo)
       .then((res) => {
         console.log(res.data);
         if (res.data) {
+          if(res.data.message=="Email already used" || res.data.message=="This Username is not available" || res.data.message=="Technical Error in sending OTP"){
+            toast.error(res.data.message);
+          }
+          else{
+          setImp(1);
           toast.success("Verify Your Email Now");
           setId(res.data.user._id);
         }
+      }
       })
       .catch((err) => {
         if (err.response) {
