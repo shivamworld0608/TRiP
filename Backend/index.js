@@ -7,8 +7,7 @@ import createtripRoute from "./route/trip.route.js";
 import transactionroute from "./route/transaction.route.js";
 
 const app = express();
-app.use(cors());
-/* const corsOptions = {
+const corsOptions = {
     origin: '*',
     credential: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
@@ -16,7 +15,7 @@ app.use(cors());
 
 
 app.options('', cors(corsOptions));
-app.use(cors(corsOptions)); */
+app.use(cors(corsOptions));
 app.use(express.json());
 
 dotenv.config();
