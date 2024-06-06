@@ -9,14 +9,14 @@ import transactionroute from "./route/transaction.route.js";
 const app = express();
 
 const corsOptions = {
-    origin: 'http://localhost:5173',
+    origin: '*',
     methods: ["GET","PUT","PATCH","POST","DELETE","OPTIONS"],
     credentials: true,
 };
 
 
+app.options('', cors(corsOptions));
 app.use(cors(corsOptions));
-app.options('*', cors(corsOptions));
 app.use(express.json());
 
 dotenv.config();
