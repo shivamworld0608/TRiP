@@ -10,8 +10,8 @@ const app = express();
 
 const corsOptions = {
     origin: '*',
-    credentials: true,
-    methods: ["GET","PUT","PATCH","POST","DELETE","OPTIONS"],
+    credential: true,
+    methods: ["GET","PUT","POST","DELETE"],
 };
 
 
