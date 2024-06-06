@@ -13,7 +13,7 @@ router.get("/finaltrip", finaltripp);
 router.post("/finaltrip", finaltrip);
 router.post("/deletetrip", deletetrip);
 router.get("/check", (req, res) => {
-    res.send("Hello, this is the root!");
+    res.send("Hello, you reached here!");
 });
 
 // Route to fetch trips by username
