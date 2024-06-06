@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Login from "./Login";
 import { useForm } from "react-hook-form";
@@ -16,7 +16,7 @@ function Signup() {
 
   const [style, setStyle] = useState("hidden");
   const [verotp, setVerotp] = useState("Verify Email");
-  const [imp, setImp]= useState("-1");
+  const [imp, setImp]= useState("0");
 
   const [formData, setFormData] = useState({
     fullname: "",
@@ -37,15 +37,25 @@ function Signup() {
   const handleButtonClick = () => {
     if (verotp === "Verify Email") {
       onSubmit();
-      if(imp === "1"){
+      /* if(imp === "1"){
+        console.log("aagya check kr ke");
       setStyle("block");
       setVerotp("Signup");
-      setImp("-1");
-    }
+      setImp("0");
+    } */
     } else {
       verify();
     }
   };
+
+  useEffect(() => {
+    if (imp === "1") {
+      setStyle("block");
+      setVerotp("Signup");
+      setImp("0");
+    }
+  }, [imp]);
+
 
   const verify = async () => {
     const userInfo = {
@@ -93,6 +103,7 @@ function Signup() {
         if (res.data) {
           if(res.data.message=== "Email already used" || res.data.message=== "This Username is not available" || res.data.message=== "Technical Error in sending OTP"){
             toast.error(res.data.message);
+            setImp("0");
           }
           else{
           setImp("1");
