@@ -16,7 +16,7 @@ function Signup() {
 
   const [style, setStyle] = useState("hidden");
   const [verotp, setVerotp] = useState("Verify Email");
-  const [imp,setImp]=useState("-1");
+  const [imp, setImp]= useState("-1");
 
   const [formData, setFormData] = useState({
     fullname: "",
@@ -37,9 +37,10 @@ function Signup() {
   const handleButtonClick = () => {
     if (verotp === "Verify Email") {
       onSubmit();
-      if(imp == "1"){
+      if(imp === "1"){
       setStyle("block");
       setVerotp("Signup");
+      setImp("-1");
     }
     } else {
       verify();
@@ -90,7 +91,7 @@ function Signup() {
       .then((res) => {
         console.log(res.data);
         if (res.data) {
-          if(res.data.message=="Email already used" || res.data.message=="This Username is not available" || res.data.message=="Technical Error in sending OTP"){
+          if(res.data.message=== "Email already used" || res.data.message=== "This Username is not available" || res.data.message=== "Technical Error in sending OTP"){
             toast.error(res.data.message);
           }
           else{
