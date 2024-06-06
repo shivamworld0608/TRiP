@@ -16,7 +16,7 @@ function Signup() {
 
   const [style, setStyle] = useState("hidden");
   const [verotp, setVerotp] = useState("Verify Email");
-  const [imp,setImp]=useState(-1);
+  const [imp,setImp]=useState("-1");
 
   const [formData, setFormData] = useState({
     fullname: "",
@@ -37,7 +37,7 @@ function Signup() {
   const handleButtonClick = () => {
     if (verotp === "Verify Email") {
       onSubmit();
-      if(imp==1){
+      if(imp == "1"){
       setStyle("block");
       setVerotp("Signup");
     }
@@ -94,7 +94,7 @@ function Signup() {
             toast.error(res.data.message);
           }
           else{
-          setImp(1);
+          setImp("1");
           toast.success("Verify Your Email Now");
           setId(res.data.user._id);
         }
