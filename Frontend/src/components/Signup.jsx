@@ -6,7 +6,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 
 function Signup() {
-  const [id, setId] = useState("");
+  const [id, setId] = useState(""); 
   const location = useLocation();
   const navigate = useNavigate();
   const from = location.state?.from?.pathname || "/";
