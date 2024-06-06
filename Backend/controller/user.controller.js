@@ -57,7 +57,7 @@ const sendverifymail=async(fullname,email)=>{
 
     }catch(error){
         console.log("Error: " + error.message);
-        res.status(500).json({ message: "Internal server error" });
+        res.status(500).json({ message: "Technical Error in sending OTP" });
     }
 }
 
