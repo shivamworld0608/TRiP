@@ -8,10 +8,9 @@ import transactionroute from "./route/transaction.route.js";
 
 const app = express();
 
-app.use(cors());
-/* const corsOptions = {
+const corsOptions = {
     origin: 'http://localhost:5173',
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    methods: ["GET","PUT","PATCH","POST","DELETE","OPTIONS"],
     credentials: true,
     preflightContinue: false,
     optionsSuccessStatus: 204
@@ -19,22 +18,10 @@ app.use(cors());
 
 
 app.use(cors(corsOptions));
-app.options('*', cors(corsOptions)); */
+app.options('*', cors(corsOptions));
 app.use(express.json());
 
 dotenv.config();
-// Example of specifying CORS options (optional)
-/* const corsOptions = {
-    origin: '*',
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
-    allowedHeaders: ['Content-Type', 'Authorization']
-  };
-  
-  // Use the cors middleware with options
-  app.use(cors(corsOptions)); */
-
-
-
 
 const PORT = process.env.PORT || 4000;
 const URI = process.env.MongoDBURI;
