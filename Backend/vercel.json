@@ -2,7 +2,7 @@
     "version": 2,
     "builds": [
         {
-            "src": "./index.js",
+            "src": "index.js",
             "use": "@vercel/node"
         }
     ],
@@ -10,7 +10,7 @@
         {
             "src": "/(.*)",
             "dest": "index.js",
-            "methods": ["GET","POST","PUT","PATCH","DELETE","OPTIONS"]
+            "methods": ["GET","POST","PUT","DELETE"]
         }
     ]
 }
