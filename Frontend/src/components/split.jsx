@@ -116,7 +116,7 @@ function Form2({ names, setSplit, isopen, onclose }) {
       <form id="form2">
         {names.map((name, index) => (
           <div key={index} className="flex  justify-between items-center m-2">
-            <div>
+            <div className="m-[10px]">
               <input
                 type="checkbox"
                 id={`${index}`}
@@ -124,7 +124,7 @@ function Form2({ names, setSplit, isopen, onclose }) {
                 value={name}
                 // defaultChecked={"You" === name}
                 onChange={handleCheckboxChange}
-                className="  mr-2 mb-[-4px] form-checkbox h-4 w-4 text-blue-600 border-blue-600 rounded focus:ring-blue-500 "
+                className="mr-[10px] mb-[-4px] form-checkbox h-4 w-4 text-blue-600 border-blue-600 rounded focus:ring-blue-500 "
               />
               <label htmlFor={`${index}`}>{name}</label>
             </div>
@@ -133,7 +133,7 @@ function Form2({ names, setSplit, isopen, onclose }) {
               type="number"
               placeholder="Amount"
               onChange={(event) => handleAmountChange(index, event)}
-              className="ml-2 border border-gray-300 rounded px-2 py-1"
+              className="border border-gray-300 px-4 py-2 mb-4 rounded-md w-[8rem]"
             />
           </div>
         ))}
