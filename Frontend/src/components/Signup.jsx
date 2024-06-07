@@ -1,12 +1,12 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Login from "./Login";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import toast from "react-hot-toast";
-  
-function Signup() { 
-  const [id, setId] = useState(""); 
+
+function Signup() {
+  const [id, setId] = useState("");
   const location = useLocation();
   const navigate = useNavigate();
   const from = location.state?.from?.pathname || "/";
@@ -16,7 +16,7 @@ function Signup() {
 
   const [style, setStyle] = useState("hidden");
   const [verotp, setVerotp] = useState("Verify Email");
-  const [imp, setImp]= useState("0");
+  const [imp, setImp] = useState("0");
 
   const [formData, setFormData] = useState({
     fullname: "",
@@ -36,6 +36,7 @@ function Signup() {
 
   const handleButtonClick = () => {
     if (verotp === "Verify Email") {
+      toast.success("Verifying");
       onSubmit();
       /* if(imp === "1"){
         console.log("aagya check kr ke");
@@ -44,6 +45,7 @@ function Signup() {
       setImp("0");
     } */
     } else {
+      toast.success("Verifying");
       verify();
     }
   };
@@ -55,7 +57,6 @@ function Signup() {
       setImp("0");
     }
   }, [imp]);
-
 
   const verify = async () => {
     const userInfo = {
@@ -69,12 +70,12 @@ function Signup() {
         if (res.data) {
           setId(res.data.user._id);
           toast.success("Email Verified Successfully");
-        /*   setTimeout(() => {
+          /*   setTimeout(() => {
             localStorage.setItem("Users", JSON.stringify(res.data.user));
             window.location.reload();
           }, 100);
 /*           localStorage.setItem("Users", JSON.stringify(res.data.user));
-          window.location.reload(); */ 
+          window.location.reload(); */
           navigate(from, { replace: true });
           window.location.reload();
         }
@@ -101,16 +102,19 @@ function Signup() {
       .then((res) => {
         console.log(res.data);
         if (res.data) {
-          if(res.data.message=== "Email already used" || res.data.message=== "This Username is not available" || res.data.message=== "Technical Error in sending OTP"){
+          if (
+            res.data.message === "Email already used" ||
+            res.data.message === "This Username is not available" ||
+            res.data.message === "Technical Error in sending OTP"
+          ) {
             toast.error(res.data.message);
             setImp("0");
+          } else {
+            setImp("1");
+            toast.success("Verify Your Email Now");
+            setId(res.data.user._id);
           }
-          else{
-          setImp("1");
-          toast.success("Verify Your Email Now");
-          setId(res.data.user._id);
         }
-      }
       })
       .catch((err) => {
         if (err.response) {
@@ -224,9 +228,8 @@ function Signup() {
                 {errors.otp && (
                   <span className="text-sm text-red-500">
                     This field is required
-                    </span>
-                 
-                  )}
+                  </span>
+                )}
               </div>
 
               <div className="flex justify-around mt-4">
@@ -239,21 +242,20 @@ function Signup() {
                     {verotp}
                   </button>
                 </div>
-              
               </div>
             </form>
             <div className="text-md mt-[10px] ml-[10px]">
-                 Already Have an account?{" "}
-                  <button
-                    className="underline text-blue-500 cursor-divointer"
-                    onClick={() =>
-                      document.getElementById("my_modal_3").showModal()
-                    }
-                  >
-                    Login
-                  </button>{" "}
-                  <Login />
-                </div>
+              Already Have an account?{" "}
+              <button
+                className="underline text-blue-500 cursor-divointer"
+                onClick={() =>
+                  document.getElementById("my_modal_3").showModal()
+                }
+              >
+                Login
+              </button>{" "}
+              <Login />
+            </div>
           </div>
         </div>
       </div>
