@@ -64,7 +64,7 @@ Your OTP: ${otp}`,
 
 
 if(userdata){
-    await sendverifymail(fullname,email,createdUser._id); 
+    await sendverifymail(fullname,email); 
     //generate a otp and save a document in verify model 
     const createdOtp = new Verify({
         otp: otp,
