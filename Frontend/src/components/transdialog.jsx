@@ -37,7 +37,7 @@ const Transdialog = ({ isopen, onclose, names, setpaid }) => {
 
   return (
     <dialog open={isopen} className="modal">
-      <div className="modal-box dark:bg-slate-800 shadow-xl border dark:border-slate-800 rounded-lg shadow-md">
+      <div className="modal-box dark:bg-slate-800 shadow-md border dark:border-slate-800 rounded-lg shadow-md">
         <button
           className="absolute top-0 right-0 m-2 text-xl"
           onClick={onclose}

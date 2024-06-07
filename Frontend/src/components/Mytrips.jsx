@@ -79,7 +79,7 @@ const Mytrips = ({ loggedInUser }) => {
         {trips.map((trip, index) => (
           <div className="m-4" key={index}>
             <div
-              className="w-[300px] rounded-2xl p-4 text-center bg-red dark:bg-slate-800 shadow-xl border dark:border-slate-800"
+              className="w-[300px] rounded-2xl p-4 text-center bg-red dark:bg-slate-800 shadow-md border dark:border-slate-800"
               key={trip._id}
             >
               <button onClick={() => handleClick(trip)}>

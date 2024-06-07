@@ -77,7 +77,7 @@ function Createtrip() {
               Enter Trip Details
             </h2>
             <form
-              className=" w-[300px] flex flex-col items-center m-auto rounded-2xl p-6 text-center bg-red dark:bg-slate-800 shadow-xl border dark:border-slate-800"
+              className=" w-[300px] flex flex-col items-center m-auto rounded-2xl p-6 text-center bg-red dark:bg-slate-800 shadow-md border dark:border-slate-800"
               onSubmit={handleSubmit(onSubmit)}
               method="dialog"
             >

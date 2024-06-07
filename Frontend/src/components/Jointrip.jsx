@@ -49,7 +49,7 @@ function Jointrip() {
           <div className="mt-12 py-4">
             <h2 className="text-xl md:text-2xl text-center mb-4">Join Trip</h2>
             <form
-              className="flex w-[300px] py-8 flex-col items-center m-auto rounded-2xl p-4 text-center bg-red dark:bg-slate-800 shadow-xl border dark:border-slate-800"
+              className="flex w-[300px] py-8 flex-col items-center m-auto rounded-2xl p-4 text-center bg-red dark:bg-slate-800 shadow-md border dark:border-slate-800"
               onSubmit={handleSubmit(onSubmit)}
               method="dialog"
             >

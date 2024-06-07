@@ -23,7 +23,7 @@ function Profiles({ loggedInUser }) {
   }, []);
 
   return (
-    <div className="  md:p-[20px] md:w-[60vw] w-[90vw] m-auto  rounded-lg shadow-2xl p-4 text-xl font-semibold mb-2 mt-[6rem] flex flex-col md:flex-row justify-between text-center items-center m-auto rounded-2xl p-4 text-center bg-red dark:bg-slate-800 shadow-xl border dark:border-slate-800">
+    <div className="  md:p-[20px] md:w-[60vw] w-[90vw] m-auto  rounded-lg shadow-2xl p-4 text-xl font-semibold mb-2 mt-[6rem] flex flex-col md:flex-row justify-between text-center items-center m-auto rounded-2xl p-4 text-center bg-red dark:bg-slate-800 shadow-md border dark:border-slate-800">
       <div>
         <img className="h-[8rem]" src={user} alt="" />
       </div>

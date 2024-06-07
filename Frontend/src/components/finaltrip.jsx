@@ -198,7 +198,7 @@ function Finaltrips() {
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 ">
           <div
-            className="bg-red  px-2 h-[50px] py-2 rounded-xl  text-center  dark:bg-slate-800 shadow-xl border dark:border-slate-800"
+            className="bg-red  px-2 h-[50px] py-2 rounded-xl  text-center  dark:bg-slate-800 shadow-md border dark:border-slate-800"
             key={uuidv4()}
           >
             <h3 className="text-xl font-semibold ">
@@ -209,7 +209,7 @@ function Finaltrips() {
             </h3>
           </div>
           <div
-            className="bg-red  h-[50px] py-2 rounded-xl  text-center  dark:bg-slate-800 shadow-xl border dark:border-slate-800"
+            className="bg-red  h-[50px] py-2 rounded-xl  text-center  dark:bg-slate-800 shadow-md border dark:border-slate-800"
             key={uuidv4()}
           >
             <h3 className="text-lg font-semibold mb-2">
@@ -220,7 +220,7 @@ function Finaltrips() {
             </h3>
           </div>
           <div
-            className="bg-red  px-2 h-[50px] py-2 rounded-xl  text-center  dark:bg-slate-800 shadow-xl border dark:border-slate-800"
+            className="bg-red  px-2 h-[50px] py-2 rounded-xl  text-center  dark:bg-slate-800 shadow-md border dark:border-slate-800"
             key={uuidv4()}
           >
             <h3 className="text-xl font-semibold mb-2">
@@ -232,7 +232,7 @@ function Finaltrips() {
           </div>
         </div>
         <div className="mainContainer ml-[-5px] mt-[40px]  flex sm:flex-row  flex-wrap flex-col justify-around items-center  sm:space-y-2 space-y-4">
-          <div className="container1 bg-red rounded-lg shadow-md px-2 pt-2  w-[330px] dark:bg-slate-800 shadow-xl border dark:border-slate-800 ">
+          <div className="container1 bg-red rounded-lg shadow-md px-2 pt-2  w-[330px] dark:bg-slate-800 shadow-md border dark:border-slate-800 ">
             <form
               className="flex flex-col items-center h-[300px]  sm:h-[300px] justify-around "
               onSubmit={handleSubmit(onSubmit)}
@@ -308,7 +308,7 @@ function Finaltrips() {
               </div>
             </form>
           </div>
-          <div className="container2 dark:bg-slate-800 shadow-xl border dark:border-slate-800 rounded-lg shadow-md p-4  flex  flex-col sm:h-[300px] justify-between items-center">
+          <div className="container2 dark:bg-slate-800 shadow-md border dark:border-slate-800 rounded-lg shadow-md p-4  flex  flex-col sm:h-[300px] justify-between items-center">
             <img
               src={img2}
               alt="image"
@@ -321,7 +321,7 @@ function Finaltrips() {
               Finalise all Expenses
             </button>
           </div>
-          <div className="container3 dark:bg-slate-800 shadow-xl border dark:border-slate-800 rounded-lg shadow-md p-4 bg-red rounded-lg shadow-md  flex  flex-col sm:h-[300px] justify-between items-center">
+          <div className="container3 dark:bg-slate-800 shadow-md border dark:border-slate-800 rounded-lg shadow-md p-4 bg-red rounded-lg shadow-md  flex  flex-col sm:h-[300px] justify-between items-center">
             <img
               src={img1}
               alt="image"
