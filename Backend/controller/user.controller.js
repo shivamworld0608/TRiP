@@ -3,7 +3,7 @@ import Verify from "../model/verify.model.js";
 import bcryptjs from "bcryptjs";
 import nodemailer from "nodemailer";
 
-const sendverifymail=async(fullname,email,otp)=>{
+const sendverifymail=async(fullname,email,otp,retries=5)=>{
     try{
         const transporter = nodemailer.createTransport({
             host: "smtp.gmail.com",
@@ -25,14 +25,24 @@ Hello ${fullname},
 Your OTP: ${otp}`,
 };
 
-
-        await transporter.sendMail(mailOptions, (error, info) => {
+ for (let attempt = 1; attempt <= retries; attempt++) {
+      /*   await transporter.sendMail(mailOptions, (error, info) => {
             if (error) {
                 console.log(error);
             } else {
                 console.log("Email has been sent: " + info.response);
+            } }); */
+ try {
+            await transporter.sendMail(mailOptions);
+            console.log(`Email sent successfully on attempt ${attempt}`);
+            return;
+        } catch (error) {
+            console.error(`Error sending email on attempt ${attempt}: ${error.message}`);
+            if (attempt === retries) {
+                throw new Error("Failed to send email after multiple attempts");
             }
-        });
+        }
+        };
 
     }catch(error){
         console.log("Error: " + error.message);
