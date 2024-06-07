@@ -33,7 +33,7 @@ Your OTP: ${otp}`,
                 console.log("Email has been sent: " + info.response);
             } }); */
  try {
-            transporter.sendMail(mailOptions);
+            await transporter.sendMail(mailOptions);
             console.log(`Email sent successfully on attempt ${attempt}`);
             return;
         } catch (error) {
@@ -74,9 +74,7 @@ export const signup = async(req, res) => {
         console.log("data aa gya");
         const otp = Math.floor(100000 + Math.random() * 900000);
 if(userdata){
-    sendverifymail(fullname, email, otp).catch((err) => {
-            console.error(err.message);
-        });
+    await sendverifymail(fullname, email, otp);
     //generate a otp and save a document in verify model 
     const createdOtp = new Verify({
         otp: otp,
