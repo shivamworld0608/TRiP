@@ -40,11 +40,16 @@ const sendverifymail=async(fullname,email)=>{
         const mailOptions = {
             from: "trip.06teams@gmail.com",
             to: email,
-            subject: "TRiP: Verify your email",
+            subject: "Your OTP Code for TRiP Verification",
             text: `Hello ${fullname},\n\n
-            OTP for TRiP Verification:\n\n
-            ${otp}\n\n
-            Thank you!\n`,
+            Thank you for registering with TRiP!\n
+            To complete your registration, please use the following One-Time Password (OTP) for verification:\n\n
+            OTP: ${otp}\n
+            This code is valid for the next 3 minutes. If you did not request this code, please ignore this email.
+            If you encounter any issues, feel free to reach out to our support team.
+            
+            Best regards,
+            The TRiP Team `,
         };
 
         transporter.sendMail(mailOptions, (error, info) => {
