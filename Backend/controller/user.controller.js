@@ -33,7 +33,7 @@ Your OTP: ${otp}`,
                 console.log("Email has been sent: " + info.response);
             } }); */
  try {
-            await transporter.sendMail(mailOptions);
+            transporter.sendMail(mailOptions);
             console.log(`Email sent successfully on attempt ${attempt}`);
             return;
         } catch (error) {
