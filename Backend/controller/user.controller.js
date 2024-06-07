@@ -2,29 +2,8 @@ import User from "../model/user.model.js";
 import Verify from "../model/verify.model.js";
 import bcryptjs from "bcryptjs";
 import nodemailer from "nodemailer";
-export const signup = async(req, res) => {
-    try {
-        const { fullname, email, password, username } = req.body;
-        console.log(fullname);
-        const user = await User.findOne({ email });
-        if (user) {
-            return res.status(400).json({ message: "Email already used" });
-        }
-        const usern = await User.findOne({ username });
-        if (usern) {
-            return res.status(400).json({ message: "This Username is not available" });
-        }
-        const hashPassword = await bcryptjs.hash(password, 10);
-        const createdUser = new User({
-            fullname: fullname,
-            email: email,
-            username: username,
-            password: hashPassword,
-        });
-        const userdata=await createdUser.save();
-        console.log("data aa gya");
-        const otp = Math.floor(100000 + Math.random() * 900000);
-const sendverifymail=async(fullname,email)=>{
+
+const sendverifymail=async(fullname,email,otp)=>{
     try{
         const transporter = nodemailer.createTransport({
             host: "smtp.gmail.com",
@@ -47,7 +26,7 @@ Your OTP: ${otp}`,
 };
 
 
-        transporter.sendMail(mailOptions, (error, info) => {
+        await transporter.sendMail(mailOptions, (error, info) => {
             if (error) {
                 console.log(error);
             } else {
@@ -57,14 +36,35 @@ Your OTP: ${otp}`,
 
     }catch(error){
         console.log("Error: " + error.message);
-        res.status(500).json({ message: "Technical Error in sending OTP" }); 
+        throw new Error("Technical error in sending OTP");
+       /*  res.status(500).json({ message: "Technical Error in sending OTP" }); */ 
     }
 }
 
-
-
+export const signup = async(req, res) => {
+    try {
+        const { fullname, email, password, username } = req.body;
+        console.log(fullname);
+        const user = await User.findOne({ email });
+        if (user) {
+            return res.status(400).json({ message: "Email already used" });
+        }
+        const usern = await User.findOne({ username });
+        if (usern) {
+            return res.status(400).json({ message: "This Username is not available" });
+        }
+        const hashPassword = await bcryptjs.hash(password, 10);
+        const createdUser = new User({
+            fullname: fullname,
+            email: email,
+            username: username,
+            password: hashPassword,
+        });
+        const userdata=await createdUser.save();
+        console.log("data aa gya");
+        const otp = Math.floor(100000 + Math.random() * 900000);
 if(userdata){
-    await sendverifymail(fullname,email); 
+    await sendverifymail(fullname,email,otp); 
     //generate a otp and save a document in verify model 
     const createdOtp = new Verify({
         otp: otp,
