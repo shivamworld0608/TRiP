@@ -190,6 +190,9 @@ function Footer() {
         </div>
         <div className="py-6 text-sm text-center dark:text-white">
           © 2024 Company Co. All rights reserved.
+          <div className="text-gray-200">
+            Developed By Shivam and Vivek, NITJ Students
+          </div>
         </div>
       </footer>
     </div>
