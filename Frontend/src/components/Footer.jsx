@@ -51,7 +51,7 @@ function Footer() {
           <p>Copyright © 2024 - All right reserved by Shivi</p>
         </aside>
       </footer> */}
-      <footer className="px-4 bg-[#1a43bf] divide-y dark:bg-gray-100 dark:text-gray-800 text-white mt-[10rem]">
+      <footer className="px-4 bg-[#1a43bf] divide-y dark:bg-[#1a43bf]  text-white mt-[10rem]">
         <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
           <div className="lg:w-1/3">
             <a
@@ -188,7 +188,7 @@ function Footer() {
             </div>
           </div>
         </div>
-        <div className="py-6 text-sm text-center dark:text-gray-600">
+        <div className="py-6 text-sm text-center dark:text-white">
           © 2024 Company Co. All rights reserved.
         </div>
       </footer>
