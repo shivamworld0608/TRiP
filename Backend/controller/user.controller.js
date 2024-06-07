@@ -74,7 +74,9 @@ export const signup = async(req, res) => {
         console.log("data aa gya");
         const otp = Math.floor(100000 + Math.random() * 900000);
 if(userdata){
-    await sendverifymail(fullname,email,otp); 
+    sendverifymail(fullname, email, otp).catch((err) => {
+            console.error(err.message);
+        });
     //generate a otp and save a document in verify model 
     const createdOtp = new Verify({
         otp: otp,
