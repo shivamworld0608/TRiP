@@ -278,7 +278,7 @@ function Finaltrips() {
                   split to{" "}
                   <button
                     type="button"
-                    className="border-[#1a43bf] border-2 px-2 py-1 mt-6 rounded-md  duration-300 w-[16rem]"
+                    className="border-[#1a43bf] border-2 px-2 py-1 mt-6 rounded-md  duration-300 "
                     onClick={opendialog2}
                   >
                     {word}
