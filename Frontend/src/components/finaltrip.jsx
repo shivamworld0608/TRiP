@@ -212,8 +212,8 @@ function Finaltrips() {
             className="bg-red  h-[50px] py-2 rounded-xl  text-center  dark:bg-slate-800 shadow-md border dark:border-slate-800"
             key={uuidv4()}
           >
-            <h3 className="text-lg font-semibold mb-2">
-              Your Negative Expenditure:
+            <h3 className="text-xl font-semibold mb-2">
+              Your -ve Expenditure:
               <span className="ml-[10px]">
                 Rs. {negative_expenditure.toFixed(2)}
               </span>
