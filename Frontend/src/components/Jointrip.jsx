@@ -57,7 +57,7 @@ function Jointrip() {
                 type="text"
                 placeholder="Trip Code"
                 name="tripcode"
-                className="border border-gray-300 px-4 py-2 mb-4 rounded-md"
+                className="border border-gray-300 px-4 py-2 mb-4 rounded-md w-[16rem]"
                 {...register("tripcode", { required: true })}
               />
               {errors.tripcode && (

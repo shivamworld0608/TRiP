@@ -85,7 +85,7 @@ function Createtrip() {
                 type="text"
                 placeholder="Trip Name"
                 name="tripname"
-                className="border border-gray-300 px-4 py-2 mb-4 rounded-md"
+                className="border border-gray-300 px-4 py-2 mb-4 rounded-md w-[16rem]"
                 {...register("tripname", { required: true })}
               />
               {errors.tripname && (
@@ -99,7 +99,7 @@ function Createtrip() {
                 name="tripcode"
                 value={tripCode}
                 onChange={(e) => setTripCode(e.target.value)}
-                className="border border-gray-300 px-4 py-2 mb-4 rounded-md"
+                className="border border-gray-300 px-4 py-2 mb-4 rounded-md w-[16rem]"
                 {...register("tripcode", { required: true })}
               />
               {errors.tripcode && (

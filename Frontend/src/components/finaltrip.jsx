@@ -243,7 +243,7 @@ function Finaltrips() {
                   type="number"
                   placeholder="Amount"
                   name="amount"
-                  className="border border-[#1a43bf]  px-4 py-2 mb-4 rounded-md"
+                  className="border border-[#1a43bf]  px-4 py-2 mb-4 rounded-md w-[16rem]"
                   {...register("amount", { required: true })}
                 />
                 {errors.amount && (
@@ -256,7 +256,7 @@ function Finaltrips() {
                   placeholder="Comment"
                   name="comment"
                   onChange={handleAmt}
-                  className="border border-[#1a43bf] px-4 py-2  rounded-md"
+                  className="border border-[#1a43bf] px-4 py-2  rounded-md w-[16rem]"
                   {...register("comment", { required: true })}
                 />
                 {errors.comment && (
@@ -278,7 +278,7 @@ function Finaltrips() {
                   split to{" "}
                   <button
                     type="button"
-                    className="border-[#1a43bf] border-2 px-2 py-1 mt-6 rounded-md  duration-300"
+                    className="border-[#1a43bf] border-2 px-2 py-1 mt-6 rounded-md  duration-300 w-[16rem]"
                     onClick={opendialog2}
                   >
                     {word}
