@@ -1,5 +1,5 @@
 import React from "react";
-import {useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 /* import Cards from "./Cards"; */
 import axios from "axios";
@@ -16,10 +16,10 @@ function Jointrip() {
 
   const onSubmit = async (data) => {
     const initialAuthUser = localStorage.getItem("Users");
-      const authUser = JSON.parse(initialAuthUser);
-      const { username } = authUser;
+    const authUser = JSON.parse(initialAuthUser);
+    const { username } = authUser;
 
-      console.log(username);
+    console.log(username);
     const tripInfo = {
       tripcode: data.tripcode,
       username: username,
@@ -41,39 +41,41 @@ function Jointrip() {
       });
   };
 
-return (
-  <>
-    <div className="max-w-screen-2xl container mx-auto md:px-20 px-4">
-       <div className="mt-[4rem] items-center justify-center text-center">
-      {/* Form for taking trip input */}
-      <div className="mt-12 py-4">
-        <h2 className="text-xl md:text-2xl text-center mb-4">
-          Join Trip
-        </h2>
-        <form className="flex flex-col items-center" onSubmit={handleSubmit(onSubmit)} method="dialog">
-          <input
-            type="text"
-            placeholder="Trip Code"
-            name="tripcode"
-            className="border border-gray-300 px-4 py-2 mb-4 rounded-md"
-            {...register("tripcode", { required: true })}
-          />
-          {errors.tripcode && (
+  return (
+    <>
+      <div className="max-w-screen-2xl container mx-auto md:px-20 px-4">
+        <div className="mt-[4rem] items-center justify-center text-center">
+          {/* Form for taking trip input */}
+          <div className="mt-12 py-4">
+            <h2 className="text-xl md:text-2xl text-center mb-4">Join Trip</h2>
+            <form
+              className="flex w-[300px] py-8 flex-col items-center m-auto rounded-2xl p-4 text-center bg-red dark:bg-slate-800 shadow-xl border dark:border-slate-800"
+              onSubmit={handleSubmit(onSubmit)}
+              method="dialog"
+            >
+              <input
+                type="text"
+                placeholder="Trip Code"
+                name="tripcode"
+                className="border border-gray-300 px-4 py-2 mb-4 rounded-md"
+                {...register("tripcode", { required: true })}
+              />
+              {errors.tripcode && (
                 <span className="text-sm text-red-500">
                   This field is required
                 </span>
               )}
-          <button
-            type="submit"
-            className="bg-[#1a43bf] text-white px-4 py-2 rounded-md hover:bg-pink-700 duration-300"
-          >
-            Join the Trip
-          </button>
-        </form>
+              <button
+                type="submit"
+                className="bg-[#1a43bf] text-white px-4 py-2 rounded-md hover:bg-pink-700 duration-300"
+              >
+                Join the Trip
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
-    </div>
-    </div>
-  </>
-);
+    </>
+  );
 }
 export default Jointrip;

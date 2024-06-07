@@ -19,7 +19,7 @@ function App() {
   console.log(authUser);
   return (
     <>
-      <div className="dark:bg-slate-900 dark:text-white">
+      <div>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route
@@ -32,11 +32,11 @@ function App() {
           />
           <Route
             path="/jointrip"
-            element={authUser ? < Jointrip /> : <Navigate to="/signup" />}
+            element={authUser ? <Jointrip /> : <Navigate to="/signup" />}
           />
           <Route
             path="/finaltrip/:tripcode"
-            element={authUser ? < Finaltrip /> : <Navigate to="/signup" />}
+            element={authUser ? <Finaltrip /> : <Navigate to="/signup" />}
           />
           <Route
             path="/transactionlog/:tripcode"
