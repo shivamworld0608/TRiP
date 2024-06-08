@@ -126,9 +126,9 @@ function Signup() {
 
   return (
     <>
-      <div className="flex h-screen items-center justify-center">
+      <div className="flex  items-center justify-center">
         <div className="w-[400px]">
-          <div className="modal-box">
+          <div className="modal-box max-h-full overflow-auto">
             <form>
               <Link
                 to="/"
