@@ -269,14 +269,14 @@ function Finaltrips() {
                 <div className="ml-[25px]">
                   <button
                     type="button"
-                    className="bg-[#1a43bf] ml-[6px] border-2 px-4 py-1  rounded-md  duration-300 text-white"
+                    className="bg-[#1a43bf] ml-[5px] border-2 px-4 py-1  rounded-md  duration-300 text-white"
                     onClick={opendialog}
                   >
                     Paid By ?
                   </button>{" "}
                   <button
                     type="button"
-                    className="bg-[#1a43bf] ml-8 border-2 px-4 py-1  rounded-md  duration-300 text-white "
+                    className="bg-[#1a43bf] ml-4 border-2 px-4 py-1  rounded-md  duration-300 text-white "
                     onClick={opendialog2}
                   >
                     For Whom ?
