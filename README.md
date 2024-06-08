@@ -5,9 +5,6 @@ Our website simplifies group trip finances, ensuring everyone stays on budget an
 
 
 
-## Screenshots
-
-
 ## Tech Stack
 
 **Frontend:**[![linkedin](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://www.linkedin.com/)
