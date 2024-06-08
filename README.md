@@ -72,6 +72,6 @@ To run this project, you will need to add the following environment variables to
 #### Now, you can contribute to the project.
 
 ## Developed By
-- Vivek
-- Shivam
+- Shivam Pandey (NITJ Students)
+- Vivek Yadav (NITJ Students)
 
