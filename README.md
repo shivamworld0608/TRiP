@@ -5,17 +5,14 @@ Our website simplifies group trip finances, ensuring everyone stays on budget an
 
 
 
-## Screenshots
-
-
 ## Tech Stack
 
-**Frontend:**[![linkedin](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://www.linkedin.com/)
+**Frontend:** [![linkedin](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://www.linkedin.com/)
 
-**Backend:**[![twitter](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)](https://twitter.com/)
+**Backend:** [![twitter](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)](https://twitter.com/)
 [![portfolio](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)](https://katherineoelsner.com/)
 
-**Database:**[![twitter](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)](https://twitter.com/)
+**Database:** [![twitter](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)](https://twitter.com/)
 
 
 
@@ -75,6 +72,6 @@ To run this project, you will need to add the following environment variables to
 #### Now, you can contribute to the project.
 
 ## Developed By
-- Vivek
-- Shivam
+- Shivam Pandey (NITJ Students)
+- Vivek Yadav (NITJ Students)
 
