@@ -132,7 +132,7 @@ function Form2({ names, setSplit, isopen, onclose }) {
             <input
               id={`name${index}`}
               type="number"
-              placeholder="Amount"
+              placeholder="How much"
               onChange={(event) => handleAmountChange(index, event)}
               className="border border-gray-300 px-4 py-2 mb-4 rounded-md w-[8rem]"
             />

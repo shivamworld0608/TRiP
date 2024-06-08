@@ -63,7 +63,7 @@ const Transdialog = ({ isopen, onclose, names, setpaid }) => {
               <input
                 id={`name${index}`}
                 type="number"
-                placeholder="Amount"
+                placeholder="How much"
                 onChange={(event) => handleAmountChange(index, event)}
                 className=" border  overflow-hidden border-gray-300 rounded px-2 py-1"
               />
