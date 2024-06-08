@@ -267,21 +267,19 @@ function Finaltrips() {
               </div>
               <div>
                 <div className="ml-[25px]">
-                  Paid by{" "}
                   <button
                     type="button"
-                    className="border-[#1a43bf] border-2 px-2 py-1 mt-6 rounded-md  duration-300"
+                    className="bg-[#1a43bf] border-2 px-4 py-1  rounded-md  duration-300"
                     onClick={opendialog}
                   >
-                    You
+                    Paid By
                   </button>{" "}
-                  split to{" "}
                   <button
                     type="button"
-                    className="border-[#1a43bf] border-2 px-2 py-1 mt-6 rounded-md  duration-300 "
+                    className="bg-[#1a43bf] ml-6 border-2 px-4 py-1  rounded-md  duration-300 "
                     onClick={opendialog2}
                   >
-                    {word}
+                    For Whom
                   </button>
                   <Transdialog
                     isopen={isdiaopen1}
