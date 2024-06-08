@@ -272,14 +272,14 @@ function Finaltrips() {
                     className="bg-[#1a43bf] ml-[6px] border-2 px-4 py-1  rounded-md  duration-300 text-white"
                     onClick={opendialog}
                   >
-                    Paid By
+                    Paid By ?
                   </button>{" "}
                   <button
                     type="button"
                     className="bg-[#1a43bf] ml-8 border-2 px-4 py-1  rounded-md  duration-300 text-white "
                     onClick={opendialog2}
                   >
-                    For Whom
+                    For Whom ?
                   </button>
                   <Transdialog
                     isopen={isdiaopen1}
