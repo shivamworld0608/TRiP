@@ -40,6 +40,7 @@ function Finaltrips() {
           params: { tripcode: trip.tripcode },
         })
         .then((response) => {
+          console(response.data.trip);
           setTrip(response.data.trip);
         });
     }, 500);
